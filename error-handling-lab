@@ -1,0 +1,22 @@
+def get_file_content():
+    try:
+        # Ask the user for the filename
+        filename = input("Enter the filename you want to read: ")
+
+        # Attempt to open the file
+        with open(filename, 'r') as file:
+            content = file.read()
+
+        # If successful, print the content of the file
+        print(f"Content of the file '{filename}':\n")
+        print(content)
+
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' does not exist.")
+    except IOError:
+        print(f"Error: There was an issue reading the file '{filename}'.")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+
+# Example usage
+get_file_content()
